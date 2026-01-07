@@ -1,8 +1,22 @@
 options:
   logging: CLOUD_LOGGING_ONLY
-# provided "roles/logging.logWriter" and "artifactregistry.repositories.uploadArtifacts" to project service account 
-# provided "roles/run.admin" and "roles/iam.serviceAccountUser" 
+
+# provided "roles/logging.logWriter" 
+# "artifactregistry.repositories.uploadArtifacts" 
+# "roles/run.admin" 
+# "roles/iam.serviceAccountUser"
+#  to project service account
+
 steps:
+
+- name: python:3.11-slim
+  entrypoint: bash
+  args:
+    - -c
+    - |
+      pip install flask==3.0.0
+      python -m unittest discover -s tests
+
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - build
