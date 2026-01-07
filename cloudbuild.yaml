@@ -1,6 +1,6 @@
 options:
   logging: CLOUD_LOGGING_ONLY
-
+# provided roles/logging.logWriter to project service account 
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
