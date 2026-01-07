@@ -10,7 +10,7 @@ def home():
         "index.html",
         app_name="Cloud CI/CD App hosted in the cloud service provider platform",
         version=os.getenv("APP_VERSION", "1.0"),
-        deployed_at=datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"),
+        deployed_at=datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S IST"),
         environment="Google Cloud Run"
     )
 
