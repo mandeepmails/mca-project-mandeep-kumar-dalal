@@ -1,6 +1,7 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 # provided "roles/logging.logWriter" and "artifactregistry.repositories.uploadArtifacts" to project service account 
+# provided "roles/run.admin" and "roles/iam.serviceAccountUser" 
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
