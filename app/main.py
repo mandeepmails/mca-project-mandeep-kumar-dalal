@@ -1,16 +1,19 @@
 from flask import Flask, render_template
-import datetime
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import os
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
+    ist_time = datetime.now(ZoneInfo("Asia/Kolkata"))
+
     return render_template(
         "index.html",
         app_name="Cloud CI/CD App hosted in the cloud service provider platform",
         version=os.getenv("APP_VERSION", "1.0"),
-        deployed_at=datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S IST"),
+        deployed_at=ist_time.strftime("%Y-%m-%d %H:%M:%S IST"),
         environment="Google Cloud Run"
     )
 
