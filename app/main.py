@@ -11,7 +11,7 @@ def home():
 
     return render_template(
         "index.html",
-        app_name="""Cloud CI/CD "Fully-Automated" App hosted in the cloud service provider platform""",
+        app_name="""Cloud CI/CD "Fully-Automated" App (New) hosted in the cloud service provider platform""",
         version=os.getenv("APP_VERSION", "1.0"),
         deployed_at=ist_time.strftime("%Y-%m-%d %H:%M:%S IST"),
         environment="Google Cloud Run"
